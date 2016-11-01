@@ -80,6 +80,19 @@ public abstract class TagAdapter<T>
         return false;
     }
 
-
-
+     /**
+     * Unselect all selected tags
+     */
+    public void unSelectAllTags(){
+        getPreCheckedList().clear();
+        notifyDataChanged();
+    }
+    
+     /**
+     * Unselect a selected tag
+     */
+    public void unSelectTag(int tag){
+        getPreCheckedList().remove(Integer.valueOf(tag));
+        notifyDataChanged();
+    }
 }
